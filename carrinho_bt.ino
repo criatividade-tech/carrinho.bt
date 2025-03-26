@@ -1,5 +1,4 @@
 #include "arduino_secrets.h"
-
 #include <Servo.h>
 #include <Dabble.h>
 
@@ -12,13 +11,13 @@
 Servo direcao; // Objeto do servo motor
 
 void setup() {
-    Serial.begin(9600);  // Inicializa a comunicaÃ§Ã£o serial
+    Serial.begin(9600);  // Inicializa a comunicação serial
     pinMode(MOTOR_PWM, OUTPUT);
     pinMode(MOTOR_IN1, OUTPUT);
     pinMode(MOTOR_IN2, OUTPUT);
     direcao.attach(SERVO_PIN);
-    direcao.write(90); // Inicia o servo na posiÃ§Ã£o central
-    Dabble.begin(9600); // Inicializa a comunicaÃ§Ã£o com o app Dabble
+    direcao.write(90); // Inicia o servo na posição central
+    Dabble.begin(9600); // Inicializa a comunicação com o app Dabble
 }
 
 void loop() {
