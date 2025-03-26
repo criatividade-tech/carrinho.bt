@@ -1,8 +1,7 @@
-#include "arduino_secrets.h"
 #include <Servo.h>
 #include <Dabble.h>
 
-// DefiniÃ§Ã£o dos pinos
+// Definição dos pinos
 #define MOTOR_PWM 5   // Pino PWM para controlar a velocidade do motor DC
 #define MOTOR_IN1 6   // Entrada 1 da ponte H
 #define MOTOR_IN2 7   // Entrada 2 da ponte H
@@ -23,11 +22,11 @@ void setup() {
 void loop() {
     Dabble.processInput(); // Processa os comandos recebidos
 
-    if (GamePad.isUpPressed()) { // Frente
+    if (GamePad.isTrianglePressed()) { // Frente (Botão Triângulo)
         digitalWrite(MOTOR_IN1, HIGH);
         digitalWrite(MOTOR_IN2, LOW);
         analogWrite(MOTOR_PWM, 150);
-    } else if (GamePad.isDownPressed()) { // RÃ©
+    } else if (GamePad.isCrossPressed()) { // Ré (Botão X)
         digitalWrite(MOTOR_IN1, LOW);
         digitalWrite(MOTOR_IN2, HIGH);
         analogWrite(MOTOR_PWM, 150);
